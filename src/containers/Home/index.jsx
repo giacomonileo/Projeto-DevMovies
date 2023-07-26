@@ -1,6 +1,6 @@
-import Button from '../../components/Button'
+import { ButtonRed, ButtonWhite } from '../../components/Button/styles'
 import api from '../../services/api'
-import { Background, Info, Poster, Container } from './styles'
+import { Background, Info, Poster, Container, ContainerButton } from './styles'
 import { useState, useEffect } from 'react'
 
 
@@ -26,10 +26,10 @@ function Home() {
                 <Info>
                 <h1>{movie.title}</h1>
                 <p>{movie.overview}</p>
-                <div>
-                    <Button red>Assista o filme</Button>
-                    <Button>Assista o trailer</Button>
-                </div>
+                <ContainerButton>
+                    <ButtonRed>Assista o filme</ButtonRed>
+                    <ButtonWhite>Assista o trailer</ButtonWhite>
+                </ContainerButton>
                 </Info>
                 <Poster>
                     <img alt='capa-do-filme' src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}/>

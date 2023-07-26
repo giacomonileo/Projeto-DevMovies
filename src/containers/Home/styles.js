@@ -52,3 +52,7 @@ export const Poster = styled.div`
       border-radius: 30px;
    }
 `
+export const ContainerButton = styled.div`
+display: flex;
+gap: 30px;
+`
