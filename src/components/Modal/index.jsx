@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import { useEffect, useState} from 'react'
 import api from '../../services/api'
@@ -21,6 +22,7 @@ function Modal({ movieId, setShowModal}) {
         <Background onClick={() => setShowModal(false)}>
             {movie && (
             <Container>
+                <button>Fechar</button>
                 <iframe
                     src={`https://www.youtube.com/embed/${movie.key}`}
                     title="Youtube Video Player"

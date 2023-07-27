@@ -16,11 +16,22 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 10px;
     position: fixed;
     padding: 50px;
     max-width: 1200px;
 
     iframe{
         border: none;
+    }
+    button{
+        cursor: pointer;
+        height: 30px;
+        width: 60px;
+        border-radius: 8px;
+        font-size: 15px;
+        opacity: 0.7;
+
     }
 `
