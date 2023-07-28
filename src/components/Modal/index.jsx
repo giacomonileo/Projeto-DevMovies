@@ -22,7 +22,7 @@ function Modal({ movieId, setShowModal}) {
         <Background onClick={() => setShowModal(false)}>
             {movie && (
             <Container>
-                <button>Fechar</button>
+                <button>X</button>
                 <iframe
                     src={`https://www.youtube.com/embed/${movie.key}`}
                     title="Youtube Video Player"

@@ -28,8 +28,8 @@ export const Container = styled.div`
     button{
         cursor: pointer;
         height: 30px;
-        width: 60px;
-        border-radius: 8px;
+        width: 30px;
+        border-radius: 100px 100px 100px 100px;
         font-size: 15px;
         opacity: 0.7;
 
