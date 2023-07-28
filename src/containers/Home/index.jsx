@@ -23,7 +23,7 @@ function Home() {
             setTopMovies(await getTopMovies())
             setTopSeries(await getAllData())
             setPopularSeries(await getPopularSeries())
-            setTopPeople(await getTopPeople)
+            setTopPeople(await getTopPeople())
 
         }
         getAllData()
