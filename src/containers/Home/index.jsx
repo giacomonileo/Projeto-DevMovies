@@ -1,7 +1,7 @@
 import { ButtonRed, ButtonWhite } from '../../components/Button/styles'
 import Modal from '../../components/Modal'
 import Slider from '../../components/Slider'
-import { getMovies, getPopularSeries, getTopMovies, getTopPeople } from '../../services/getData'
+import { getMovies, getPopularSeries, getTopMovies, getTopPeople, getTopSeries } from '../../services/getData'
 import { getImages } from '../../utils/getImages'
 import { Background, Info, Poster, Container, ContainerButton } from './styles'
 import { useState, useEffect } from 'react'
@@ -19,12 +19,21 @@ function Home() {
 
     useEffect (() => {
         async function getAllData() {
-            setMovie(await getMovies())
-            setTopMovies(await getTopMovies())
-            setTopSeries(await getAllData())
-            setPopularSeries(await getPopularSeries())
-            setTopPeople(await getTopPeople())
-
+            Promise.all([
+                getMovies(),
+                getTopMovies(),
+                getTopSeries(),
+                getPopularSeries(),
+                getTopPeople()
+                ])
+                .then(([movie, topMovies, topSeries, popularSeries, topPeople]) => {
+                    setMovie(movie)
+                    setTopMovies(topMovies)
+                    setTopSeries(topSeries)
+                    setPopularSeries(popularSeries)
+                    setTopPeople(topPeople)
+                })
+                .catch((error) => console.error(error))
         }
         getAllData()
 
